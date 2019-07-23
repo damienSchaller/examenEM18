@@ -11,16 +11,12 @@ $(document).ready(function() {
             dataType : 'jsonp'
         });
 
-        requete.done(function(reponse) {
-            const musiques = reponse.data;
-
-            console.log({ musiques })
-        });
+        requete.done(traiterResultats);
 
         // use call AJAX
 
-        function traiterResultats(musiques) {
-            let htmlContent = musiques.map(generateMusicObject);
+        function traiterResultats({data : musiques}) {
+            let htmlContent = musiques.map(generateMusicObject).join('');
             $('#musicListContainer').html(htmlContent);
         }
 
@@ -28,12 +24,11 @@ $(document).ready(function() {
 
         function generateMusicObject(musicItem) {
             return `<li class="media">
-            <img class="media-object" src="` + musicItem.album.cover + `">
-            <p class="">` + musicItem.title + `</p>
-            <p class="">` + musicItem.album.title + `</p>
-            <p class="">` + musicItem.artist.title + `</p>
+            <img class="media-object" src="${musicItem.album.cover}">
+            <p class="">${musicItem.title}</p>
+            <p class="">${musicItem.album.title}</p>
+            <p class="">${musicItem.artist.title}</p>
             </li>`;
         }
     });
-
 });
