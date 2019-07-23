@@ -1,0 +1,44 @@
+@import "./resetCss.css";
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+/*--- Colors ---*/
+:root {
+    --blueColorDeezer: #2d96c8;
+    --blueColorDeezerHover: #03608a;
+    --lightGreyColorDeezer: rgba(0,0,0,.5);
+}
+body{
+    height: 100vh;
+}
+/*--- Navigation Bar ---*/
+.logo {
+    max-width: 100px;
+    margin-right: 20px;
+}
+.logoBox {
+    display: flex;
+    align-items: center;
+}
+.searchForm , .searchButton {
+    border-radius: 20px;
+}
+.searchButton {
+    color: var(--blueColorDeezer);
+    border-color: var(--blueColorDeezer);
+}
+.searchButton:hover{
+    background-color: var(--blueColorDeezerHover);
+    border-color: var(--blueColorDeezerHover);
+}
+/*--- texts ---*/
+.titlePage {
+    margin-top: 50px;
+    font-size: 40px;
+    text-align: center;
+    color: var(--blueColorDeezer);
+}
+.subTitlePage {
+    margin-top: 10px;
+    font-size: 15px;
+    text-align: center;
+    color: var(--lightGreyColorDeezer);
+}

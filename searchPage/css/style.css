@@ -1,0 +1,27 @@
+:root {
+    --blueColorDeezer: #2d96c8;
+    --blueColorDeezerHover: #03608a;
+    --lightGreyColorDeezer: rgba(0,0,0,.5);
+}
+.searchContainer {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    max-width: 80%;
+    margin: 0 auto;
+    padding-top: 20px;
+}
+/*--- Toggle item ---*/
+    .toggleItem {
+        display: none;
+    }
+/*--- filter item ---*/
+.filter {
+    color: var(--lightGreyColorDeezer);
+}
+.nav-link {
+    color: var(--lightGreyColorDeezer);
+}
+.nav-link:hover {
+    color: var(--blueColorDeezerHover);
+}
