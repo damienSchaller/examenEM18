@@ -6,13 +6,23 @@
     --blueColorDeezerHover: #03608a;
     --lightGreyColorDeezer: rgba(0,0,0,.5);
 }
-body{
+.home{
     height: 100vh;
+    background-image: url(../assets/concert.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
 }
 /*--- Navigation Bar ---*/
 .logo {
     max-width: 100px;
     margin-right: 20px;
+}
+@media screen and (min-width: 200px) and (max-width: 990px) {
+    .logo {
+        display: none;
+    }
 }
 .logoBox {
     display: flex;
@@ -41,4 +51,24 @@ body{
     font-size: 15px;
     text-align: center;
     color: var(--lightGreyColorDeezer);
+}
+
+/*--- items ---*/
+#randomFavoritMusic {
+    display: flex;
+    margin-top: 50px;
+}
+.link {
+    text-align: center;
+    margin: 0 auto;
+    background: var(--blueColorDeezer);
+    padding: 10px 20px;
+    border-radius: 20px;
+    color: white;
+    font-size: 14px;
+}
+.link:hover {
+    background: var(--blueColorDeezerHover);
+    text-decoration: none;
+    color: white;
 }

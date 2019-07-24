@@ -2,6 +2,7 @@
     --blueColorDeezer: #2d96c8;
     --blueColorDeezerHover: #03608a;
     --lightGreyColorDeezer: rgba(0,0,0,.5);
+    --favoritItemsColor: rgb(131, 7, 7);
 }
 .searchContainer {
     display: flex;
@@ -11,11 +12,21 @@
     margin: 0 auto;
     padding-top: 20px;
 }
-/*--- Toggle item ---*/
-    .toggleItem {
-        display: none;
+@media screen and (min-width: 200px) and (max-width: 990px) {
+    .searchContainer {
+        flex-direction: column;
     }
+}
+/*--- Toggle item ---*/
+.toggleItem {
+    display: none;
+}
 /*--- filter item ---*/
+#filter {
+    background: none;
+    border-color: var(--blueColorDeezer);
+    color: var(--blueColorDeezer);
+}
 .filter {
     color: var(--lightGreyColorDeezer);
 }
@@ -24,4 +35,56 @@
 }
 .nav-link:hover {
     color: var(--blueColorDeezerHover);
+}
+/*--- music item ---*/
+#musicListContainer {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    width: 80%;
+    margin: 0 auto;
+}
+.media {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0 20px;
+}
+.albumPicture {
+    margin: 20px 0;
+}
+.infoMusic {
+    width: 100%;
+    margin-bottom: 30px;
+}
+.musicTitle {
+    padding: 0;
+    font-size: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+    color: var(--blueColorDeezer);
+}
+.musicDetail {
+    margin-bottom: 5px;
+    text-align: center;
+    font-size: 16px;
+    color: var(--lightGreyColorDeezer);
+}
+.addFavorit {
+    cursor: pointer;
+    border: 1px solid var(--blueColorDeezer);
+    color: var(--blueColorDeezer);
+    padding: 10px 20px;
+    background: transparent;
+    border-radius: 20px;
+}
+.checkedFavorit {
+    cursor: pointer;
+    border: 1px solid var(--favoritItemsColor);
+    color: var(--favoritItemsColor);
+    padding: 10px 20px;
+    background: transparent;
+    border-radius: 20px;
 }

@@ -32,37 +32,28 @@
                     <a class="nav-link" href="../favoritPage/favoritPage.html">Mes favoris</a>
                 </li>
             </ul>
-            <form class="form-inline my-2 my-lg-0">
-                <input class="searchForm form-control mr-sm-2" type="search" placeholder="Trouver une musique, Artiste ..." aria-label="Search">
-                <button class="searchButton btn btn-outline-success my-2 my-sm-0" type="submit">Rechercher</button>
-            </form>
         </div>
     </nav>
-    <h1 class="titlePage">search page</h1>
+    <h1 class="titlePage">Trouver vos titres préférés</h1>
+    <p class="subTitlePage">vous pouvez ici accéder à toutes vos musiques préférés</p>
     <div class="searchContainer">
-        <ul class="navbar-nav mr-auto">
-            <li class="filter nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    filtrer
-                </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="#">Album</a>
-                    <a class="dropdown-item" href="#">Artite</a>
-                    <a class="dropdown-item" href="#">Morceau</a>
-                    <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="#">Les mieux notés</a>
-                    <a class="dropdown-item" href="#">Les plus populaires</a>
-                </div>
-            </li>
-        </ul>
+        <select id="filter" class="navbar-nav mr-auto" aria-labelledby="navbarDropdown">
+            <option class="dropdown-item nav-item" value="TRACK_ASC">Album</option>
+            <option class="dropdown-item nav-item" value="ALBUM_ASC">Artite</option>
+            <option class="dropdown-item nav-item" value="TRACK_ASC">Morceau</option>
+            <div class="dropdown-divider"></div>
+            <option class="dropdown-item nav-item " value="RATING_ASC">Les mieux notés</option>
+            <option class="dropdown-item nav-item" value="RANKING">Les plus populaires</option>
+        </select>
         <button class="toggleItem navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <form id="searchForm" class="col-md-12 form-inline my-2 my-lg-2">
+        <form id="searchForm" class="col-md-11 form-inline my-2 my-lg-2">
             <input id="searchText" class="col-md-10 searchForm form-control mr-sm-2" type="search" placeholder="Trouver une musique, Artiste ..." aria-label="Search">
             <button class="searchButton btn btn-outline-success my-2 my-sm-0 mt-10" type="submit">Rechercher</button>
         </form>
     </div>
+    <p id="noresult" class="subTitlePage">aucun résultat de recherche</p>
     <ul id="musicListContainer">
 
     </ul>
