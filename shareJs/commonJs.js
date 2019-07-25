@@ -20,6 +20,11 @@ $(document).ready(function() {
         function traiterResultats({data : musiques}) {
             let htmlContent = musiques.map(generateMusicObject).join('');
             $('#musicListContainer').html(htmlContent);
+            $('#noresult').text('')
+            console.log(htmlContent)
+            if (htmlContent.length < 1) {
+                $('#noresult').text('aucune recherche ne correspond')
+            }
         }
 
         // add musicItem AJAX
@@ -40,6 +45,9 @@ $(document).ready(function() {
         }
     });
 
+    $('#musicListContainer').on( 'click', '.addFavorit', function() {
+
+    });
     // favorit song management
 
     // save in localStorage
@@ -60,6 +68,7 @@ $(document).ready(function() {
             "musicId" : idObject,
         };
 
+        $(this).removeClass('addFavorit').addClass('deleteFavorit').text('Ajouté !')
         localStorage.setItem(idObject, JSON.stringify(musicObjet));
     });
 });

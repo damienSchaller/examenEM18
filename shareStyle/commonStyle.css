@@ -5,6 +5,7 @@
     --blueColorDeezer: #2d96c8;
     --blueColorDeezerHover: #03608a;
     --lightGreyColorDeezer: rgba(0,0,0,.5);
+    --deleteButtonColorDeezer: #8B0000;
 }
 .home{
     height: 100vh;
@@ -153,6 +154,14 @@
     cursor: pointer;
     border: 1px solid var(--blueColorDeezer);
     color: var(--blueColorDeezer);
+    padding: 10px 20px;
+    background: white;
+    border-radius: 20px;
+}
+.deleteFavorit {
+    cursor: pointer;
+    border: 1px solid var(--deleteButtonColorDeezer);
+    color: var(--deleteButtonColorDeezer);
     padding: 10px 20px;
     background: white;
     border-radius: 20px;

@@ -36,18 +36,18 @@ $(document).ready(function() {
         <p class="musicDetail albumTitle">${favoritItem.musicAlbum}</p>
         <p class="musicDetail artistName">${favoritItem.musicArtist}</p>
         </div>
-        <button class="addFavorit">supprimer des favoris</button>
+        <button class="deleteFavorit">supprimer des favoris</button>
         </li>`;
     }
 
     // delete Favorit Object
 
-    $('#favoritContainer').on( 'click', '.addFavorit', function() {
+    $('#favoritContainer').on( 'click', '.deleteFavorit', function() {
         const key = $(this).parent('li').attr('id');
         localStorage.removeItem(key);
         const elementId = $(this).parent('li').remove('li');
         elementId.remove( 'id' )
-
+        $('.addFavorit').removeClass('searchButton').addClass('deleteFavorit').text('supprimer des favoris')
     });
 
 });
