@@ -23,7 +23,7 @@
 }
 /*--- filter item ---*/
 #filter {
-    background: none;
+    background: white;
     border-color: var(--blueColorDeezer);
     color: var(--blueColorDeezer);
 }
@@ -77,7 +77,7 @@
     border: 1px solid var(--blueColorDeezer);
     color: var(--blueColorDeezer);
     padding: 10px 20px;
-    background: transparent;
+    background: white;
     border-radius: 20px;
 }
 .checkedFavorit {

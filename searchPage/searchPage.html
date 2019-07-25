@@ -13,50 +13,52 @@
     <title>Deezer search page</title>
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mr-auto">
-                <li class="logoBox">
-                    <img class="logo" src="../assets/deezerLogo.png" alt="Logo Deezer" title="Logo Deezer">
-                </li>
-                <li class="nav-item active">
-                    <a class="nav-link" href="../index.html">Accueil <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Rechercher un titre</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="../favoritPage/favoritPage.html">Mes favoris</a>
-                </li>
-            </ul>
+    <div class="softBackground">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="logoBox">
+                        <img class="logo" src="../assets/deezerLogo.png" alt="Logo Deezer" title="Logo Deezer">
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="../index.html">Accueil <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Rechercher un titre</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../favoritPage/favoritPage.html">Mes favoris</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <h1 class="titlePage">Trouver vos titres préférés</h1>
+        <p class="subTitlePage">vous pouvez ici accéder à toutes vos musiques préférés</p>
+        <div class="searchContainer">
+            <select id="filter" class="navbar-nav" aria-labelledby="navbarDropdown">
+                <option class="dropdown-item nav-item" value="TRACK_ASC">Album</option>
+                <option class="dropdown-item nav-item" value="ALBUM_ASC">Artite</option>
+                <option class="dropdown-item nav-item" value="TRACK_ASC">Morceau</option>
+                <div class="dropdown-divider"></div>
+                <option class="dropdown-item nav-item " value="RATING_ASC">Les mieux notés</option>
+                <option class="dropdown-item nav-item" value="RANKING">Les plus populaires</option>
+            </select>
+            <button class="toggleItem navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <form id="searchForm" class="col-md-11 form-inline my-2 my-lg-2">
+                <input id="searchText" class="col-md-10 searchForm form-control mr-sm-2" type="search" placeholder="Trouver une musique, Artiste ..." aria-label="Search">
+                <button class="searchButton btn btn-outline-success my-2 my-sm-0 mt-10" type="submit">Rechercher</button>
+            </form>
         </div>
-    </nav>
-    <h1 class="titlePage">Trouver vos titres préférés</h1>
-    <p class="subTitlePage">vous pouvez ici accéder à toutes vos musiques préférés</p>
-    <div class="searchContainer">
-        <select id="filter" class="navbar-nav mr-auto" aria-labelledby="navbarDropdown">
-            <option class="dropdown-item nav-item" value="TRACK_ASC">Album</option>
-            <option class="dropdown-item nav-item" value="ALBUM_ASC">Artite</option>
-            <option class="dropdown-item nav-item" value="TRACK_ASC">Morceau</option>
-            <div class="dropdown-divider"></div>
-            <option class="dropdown-item nav-item " value="RATING_ASC">Les mieux notés</option>
-            <option class="dropdown-item nav-item" value="RANKING">Les plus populaires</option>
-        </select>
-        <button class="toggleItem navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <form id="searchForm" class="col-md-11 form-inline my-2 my-lg-2">
-            <input id="searchText" class="col-md-10 searchForm form-control mr-sm-2" type="search" placeholder="Trouver une musique, Artiste ..." aria-label="Search">
-            <button class="searchButton btn btn-outline-success my-2 my-sm-0 mt-10" type="submit">Rechercher</button>
-        </form>
-    </div>
-    <p id="noresult" class="subTitlePage">aucun résultat de recherche</p>
-    <ul id="musicListContainer">
+        <p id="noresult" class="subTitlePage">aucun résultat de recherche</p>
+        <ul id="musicListContainer">
 
-    </ul>
+        </ul>
+    </div>
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://unpkg.com/jquery"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
