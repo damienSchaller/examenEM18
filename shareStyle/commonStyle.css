@@ -124,10 +124,15 @@
     justify-content: center;
     width: 80%;
     margin: 0 auto;
+    padding-bottom: 30px;
 }
 #randomFavoritContainer {
     display: flex;
     justify-content: center;
+    padding-bottom: 30px;
+}
+#favoritContainer {
+    padding-bottom: 30px;
 }
 .media {
     display: flex;
@@ -145,6 +150,7 @@
 }
 .infoMusicRandom {
     background-color: var(--transperentColorHome);
+    padding: 10px;
 }
 .musicTitle {
     padding: 0;
