@@ -1,3 +1,4 @@
+// favorit song management
 $(document).ready(function() {
 
     // show in page from localStorage
@@ -5,9 +6,13 @@ $(document).ready(function() {
 
     // generate array from storage keys
     function getFavoritFromStorage() {
+
         let musicsArray = [];
+
         for (let key in localStorage) {
+
             const music = localStorage.getItem(key)
+
             if (music !== null) {
                 musicsArray.push(JSON.parse(music));
             }
@@ -18,14 +23,18 @@ $(document).ready(function() {
     // add favorit in html
 
     function traiterFavorits () {
+
         var favorit = getFavoritFromStorage();
+
         let htmlContent = favorit.map(generateFavoritObject).join('');
+
         $('#favoritContainer').html(htmlContent);
     }
 
     // generate Favorit Object
 
     function generateFavoritObject(favoritItem) {
+
         return `<li id="${favoritItem.musicId}" class="media">
         <video controls="" name="media">
         <source class="musicPreview" src="${favoritItem.musicPreview}" type="audio/mpeg">
@@ -43,14 +52,17 @@ $(document).ready(function() {
     // delete Favorit Object
 
     $('#favoritContainer').on( 'click', '.deleteFavorit', function() {
+
         const key = $(this).parent('li').attr('id');
         localStorage.removeItem(key);
+
         const elementId = $(this).parent('li').remove('li');
         elementId.remove( 'id' )
+
         var favorit = getFavoritFromStorage();
+
         if (favorit.length < 1) {
             $('#noresult').text('vous n\'avez plus de favoris')
         }
     });
-
 });

@@ -10,25 +10,31 @@ $(document).ready(function() {
         // call AJAX
 
         const requete = $.ajax({
+
             url: 'https://api.deezer.com/search?q=' + recherche + '&output=jsonp&order=' + filter,
             dataType: 'jsonp'
+
         });
         requete.done(traiterResultats);
 
         // use call AJAX
 
         function traiterResultats({data : musiques}) {
+
             let htmlContent = musiques.map(generateMusicObject).join('');
+
             $('#musicListContainer').html(htmlContent);
             $('#noresult').text('')
+
             if (htmlContent.length < 1) {
                 $('#noresult').text('Aucune recherche ne correspond')
             }
         }
-        
+
         // add musicItem AJAX
 
         function generateMusicObject(musicItem) {
+
             return `<li id="${musicItem.id}" class="media">
             <video controls="" name="media">
             <source class="musicPreview" src="${musicItem.preview}" type="audio/mpeg">
@@ -44,13 +50,9 @@ $(document).ready(function() {
         }
     });
 
-    $('#musicListContainer').on( 'click', '.addFavorit', function() {
-
-    });
-    // favorit song management
-
     // save in localStorage
     $('#musicListContainer').on( 'click', '.addFavorit', function() {
+
         var title = $(this).parent('li').find('.musicTitle').text();
         var album = $(this).parent('li').find('.albumTitle').text();
         var artist = $(this).parent('li').find('.artistName').text();
