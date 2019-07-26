@@ -5,10 +5,12 @@
     --blueColorDeezer: #2d96c8;
     --blueColorDeezerHover: #03608a;
     --lightGreyColorDeezer: rgba(0,0,0,.5);
+    --transperentColorHome: rgb(255, 255, 255,.9);
     --deleteButtonColorDeezer: #8B0000;
 }
 .home{
-    height: 100vh;
+    height: 100%;
+    min-height: 100vh;
     background-image: url(../assets/concert.jpg);
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -123,6 +125,10 @@
     width: 80%;
     margin: 0 auto;
 }
+#randomFavoritContainer {
+    display: flex;
+    justify-content: center;
+}
 .media {
     display: flex;
     flex-direction: column;
@@ -136,6 +142,9 @@
 .infoMusic {
     width: 100%;
     margin-bottom: 30px;
+}
+.infoMusicRandom {
+    background-color: var(--transperentColorHome);
 }
 .musicTitle {
     padding: 0;

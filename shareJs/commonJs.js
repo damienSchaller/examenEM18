@@ -21,12 +21,11 @@ $(document).ready(function() {
             let htmlContent = musiques.map(generateMusicObject).join('');
             $('#musicListContainer').html(htmlContent);
             $('#noresult').text('')
-            console.log(htmlContent)
             if (htmlContent.length < 1) {
-                $('#noresult').text('aucune recherche ne correspond')
+                $('#noresult').text('Aucune recherche ne correspond')
             }
         }
-
+        
         // add musicItem AJAX
 
         function generateMusicObject(musicItem) {
@@ -34,7 +33,7 @@ $(document).ready(function() {
             <video controls="" name="media">
             <source class="musicPreview" src="${musicItem.preview}" type="audio/mpeg">
             </video>
-            <img id="musicPicture" class="media-object albumPicture" src="${musicItem.album.cover}">
+            <img id="musicPicture" class="media-object albumPicture" src="${musicItem.album.cover}" alt="${musicItem.album.title}" title="${musicItem.album.title}">
             <div class="infoMusic">
             <p class="musicTitle">${musicItem.title}</p>
             <p class="musicDetail albumTitle">${musicItem.album.title}</p>

@@ -30,7 +30,7 @@ $(document).ready(function() {
         <video controls="" name="media">
         <source class="musicPreview" src="${favoritItem.musicPreview}" type="audio/mpeg">
         </video>
-        <img id="musicPicture" class="media-object albumPicture" src="${favoritItem.musicAlbumPicture}">
+        <img class="media-object albumPicture" src="${favoritItem.musicAlbumPicture}" alt="${favoritItem.musicTitle}" title="${favoritItem.musicTitle}">
         <div class="infoMusic">
         <p class="musicTitle">${favoritItem.musicTitle}</p>
         <p class="musicDetail albumTitle">${favoritItem.musicAlbum}</p>
@@ -47,7 +47,10 @@ $(document).ready(function() {
         localStorage.removeItem(key);
         const elementId = $(this).parent('li').remove('li');
         elementId.remove( 'id' )
-        $('.addFavorit').removeClass('searchButton').addClass('deleteFavorit').text('supprimer des favoris')
+        var favorit = getFavoritFromStorage();
+        if (favorit.length < 1) {
+            $('#noresult').text('vous n\'avez plus de favoris')
+        }
     });
 
 });

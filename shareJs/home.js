@@ -1,5 +1,4 @@
 $(document).ready(function() {
-    generateRandomFavorit();
     function generateRandomFavorit() {
         let musicsArray = [];
         for (let key in localStorage) {
@@ -9,30 +8,28 @@ $(document).ready(function() {
             }
         }
         var musicRandom = musicsArray[Math.floor(Math.random()*musicsArray.length)];
-        console.log(musicRandom);
-        return musicRandom.val()
-        console.log(musicRandom);
+        return musicRandom
     }
 
     function traiterRandomFavorits () {
-        var favorit = getFavoritFromStorage();
-        let htmlContent = favorit.map(randomFavoritObject).join('');
-        $('#favoritContainer').html(htmlContent);
+        var randomElement = generateRandomFavorit();
+        let htmlContent = renderFavoritObject(randomElement);
+        $('#randomFavoritContainer').html(htmlContent);
     }
+    traiterRandomFavorits ()
     // generate Random Favorit Object
 
-    function randomFavoritObject(musicRandom) {
-        return `<li id="${musicRandom.musicId}" class="media">
+    function renderFavoritObject(randomElement) {
+        return `<li id="${randomElement.musicId}" class="media">
         <video controls="" name="media">
-        <source class="musicPreview" src="${musicRandom.musicPreview}" type="audio/mpeg">
+        <source class="musicPreview" src="${randomElement.musicPreview}" type="audio/mpeg">
         </video>
-        <img id="musicPicture" class="media-object albumPicture" src="${musicRandom.musicAlbumPicture}">
-        <div class="infoMusic">
-        <p class="musicTitle">${musicRandom.musicTitle}</p>
-        <p class="musicDetail albumTitle">${musicRandom.musicAlbum}</p>
-        <p class="musicDetail artistName">${musicRandom.musicArtist}</p>
+        <img class="media-object albumPicture" src="${randomElement.musicAlbumPicture}" alt="${randomElement.musicTitle}" title="${randomElement.musicTitle}">
+        <div class="infoMusic infoMusicRandom">
+        <p class="musicTitle">${randomElement.musicTitle}</p>
+        <p class="musicDetail albumTitle">${randomElement.musicAlbum}</p>
+        <p class="musicDetail artistName">${randomElement.musicArtist}</p>
         </div>
-        <button class="deleteFavorit">supprimer des favoris</button>
         </li>`;
     }
 });
